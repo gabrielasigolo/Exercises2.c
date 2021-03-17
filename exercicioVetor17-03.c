@@ -1,14 +1,3 @@
-/* 
-	GABARITO: 
-	Q1 = A
-	Q2 = C
-	Q3 = D
-	Q4 = B 
-	Q5 = E
-
-*/
-
-
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
@@ -16,24 +5,30 @@
 int main () {
 	setlocale(LC_ALL, "Portuguese");
 	
-	char questoes[5] = {'a', 'c', 'd', 'b', 'e'}, pontuacao, resposta[5], nome[25], pontos;
-	int i;  
+	char questoes[5] = {'a', 'c', 'd', 'b', 'e'}, resposta[5], nome [10] [25];
+	int i, pontos, pontuacao, aluno, nota[3];  
 	
-while(1) {
-	pontos=0;
+for(aluno=0; aluno < 3; aluno++) 
+{
+	
 	system("cls");
 	puts("Nome do aluno: "); fflush(stdin);
-	gets(nome); // recebe o nome completo com espaço 
+	gets(nome[aluno]); // recebe o nome completo com espaÃ§o 
 	
-	printf("--- QUESTÕES ---");
-	for(i=0; i < 5; i++){
-	printf("\nQuestão %iº --- Resposta: ", i+1);
-	scanf(" %c", &resposta[i]);	
+	pontos=0;
+	printf("--- QUESTÃ•ES ---");
+	for(i=0; i < 5; i++)
+	{
+		printf("\nQuestÃ£o %iÂº --- Resposta: ", i+1);
+		scanf(" %c", &resposta[i]);	
 
-	if(questoes[i] == resposta[i]) {
+	if(questoes[i] == resposta[i]) 
+	{	
 		pontos++;
 		printf("Acertou");
-	} else {
+	} 
+	else 
+	{
 		printf("Errou");
 	}
 
@@ -44,6 +39,8 @@ while(1) {
 	printf("\n %s, sua nota final foi: %i \n\n", nome, pontuacao);
 	system("pause");
 }
+
+	printf("\n Os nomes dos alunos %s %s %s", nome[0], nome[1], nome[2]);
 
 	return 0; 
 }
